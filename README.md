@@ -17,7 +17,7 @@ recv.addListener("*", function(code) {
 });
 
 // To listen to events from the tv
-recv.addListener("0*, function(code) {
+recv.addListener("0*", function(code) {
   console.log("TV: " + code);
 });
 
