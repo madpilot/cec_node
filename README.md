@@ -8,21 +8,24 @@ the USB adapter, you can listener to CEC events, as well as send them.
 ## Usage
 
 ```javascript
-var send = require('cec_node').send;
-var recv = require('cec_node').receive;
+var CEC = require('cec_node');
+cec = CEC.start();
 
 // To listen events
-recv.addListener("*", function(code) {
+cec.addListener("*", function(code) {
   console.log(code);
 });
 
 // To listen to events from the tv
-recv.addListener("0*", function(code) {
+var id = cec.addListener("0*", function(code) {
   console.log("TV: " + code);
 });
 
+// To remove a listener
+cec.removeListener(id);
+
 // To send a code
-send.tx("10:04");
+cec.send("10:04");
 ```
 
 ## Development
