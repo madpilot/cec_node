@@ -9,7 +9,16 @@ the USB adapter, you can listener to CEC events, as well as send them.
 
 ```javascript
 var CEC = require('cec_node');
-cec = CEC.start();
+
+// CEC.start takes an options has with the following keys:
+// name: OSD display name (Max 13 characters)
+// type: Array of types to report as. Valid: recording, playback, tv, audio
+// port: The HDMI port to use as active source
+// base: The logical address of the device to with this adapter is connected
+// monitor: Boolean - true to start a monitor only client
+// commport: Comm Port to connect to. Leave it blank to use the first
+var options = { name: 'cec_node' }
+cec = CEC.start(options);
 
 // To listen events
 cec.addListener("*", function(code) {
@@ -26,6 +35,9 @@ cec.removeListener(id);
 
 // To send a code
 cec.send("10:04");
+
+// All done
+CEC.stop();
 ```
 
 ## Development
