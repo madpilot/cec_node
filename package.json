@@ -1,0 +1,11 @@
+{
+  "name": "cec_node",
+  "version": "0.0.1",
+  "description": "Control CEC from Node",
+  "main": "lib/cec_node.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Myles Eftos <myles@madpilot.com.au>",
+  "license": "MIT"
+}
