@@ -12,7 +12,7 @@ var CEC = require('cec_node');
 
 // CEC.start takes an options has with the following keys:
 // name: OSD display name (Max 13 characters)
-// type: Array of types to report as. Valid: recording, playback, tv, audio
+// type: Array of types to report as. Valid: recording, playback, tuner, audio
 // port: The HDMI port to use as active source
 // base: The logical address of the device to with this adapter is connected
 // monitor: Boolean - true to start a monitor only client
